@@ -16,8 +16,10 @@ while True:
     choice = int(input("Enter your choice :"))
 
 
+
+
     while choice > 3 or choice < 1:
-        choice = int(input('Enter a valid choice please '))
+        choice = int(input('Enter a valid choice please ☺: '))
 
 
     if choice == 1:
@@ -27,13 +29,11 @@ while True:
     else:
         choice_name = 'Scissors'
 
-
+        # print user choice
     print('User choice is \n', choice_name)
     print('Now its Computers Turn....')
 
-
     comp_choice = random.randint(1, 3)
-
 
     while comp_choice == choice:
         comp_choice = random.randint(1, 3)
@@ -50,7 +50,6 @@ while True:
     if choice == comp_choice:
         print('Its a Draw', end="")
         result = "DRAW"
-        
     if (choice == 1 and comp_choice == 2):
         print('paper wins =>', end="")
         result = 'papeR'
@@ -70,19 +69,18 @@ while True:
         result = 'scissoR'
     elif (choice == 3 and comp_choice == 2):
         print('Scissors wins =>', end="")
-        result = 'Rock'
-        
-
+        result = 'Scissor'
     if result == 'DRAW':
         print("<== Its a tie ==>")
     if result == choice_name:
         print("<== User wins ==>")
     else:
         print("<== Computer wins ==>")
-        
     print("Do you want to play again? (Y/N)")
     ans = input().lower()
-    if ans != 'y':
+    if ans == 'n':
         break
+
+
 
 print("Thanks for playing")
